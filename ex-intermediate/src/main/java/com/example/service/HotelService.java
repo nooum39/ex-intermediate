@@ -14,7 +14,6 @@ import java.util.List;
  *
  * @author haruka.yamaneki
  */
-
 @Service
 @Transactional
 public class HotelService {
@@ -24,19 +23,16 @@ public class HotelService {
     /**
      * 引数よりも低い価格のホテルを表示するメソッドを呼び出します.
      *
-     * @param price
+     * @param price 価格
      * @return　ホテル一覧
      */
     public List<Hotel> showBelowPrice(Integer price) {
-        return hotelRepository.showBelowPrice(price);
+        if (price == null) {
+            return hotelRepository.findByAll();
+
+        }
+        return hotelRepository.findByBelowPrice(price);
     }
 
-    /**
-     * すべてのホテルを表示するメソッドを呼び出します.
-     *
-     * @return　ホテル一覧
-     */
-    public List<Hotel> showAllList() {
-        return hotelRepository.showAllList();
-    }
+
 }

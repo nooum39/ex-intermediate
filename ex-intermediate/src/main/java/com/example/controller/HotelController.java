@@ -24,43 +24,30 @@ public class HotelController {
     @Autowired
     private HotelService hotelService;
 
-    @ModelAttribute
-    private HotelForm setUpForm() {
-        return new HotelForm();
-    }
-
     /**
      * ホテル検索画面を表示します.
      *
      * @return ホテル検索画面
      */
     @GetMapping("/seach")
-    public String seach(Model model) {
+    public String seach(Model model, HotelForm form) {
         return "hotelSeach";
     }
 
-
     /**
      * ホテル検索結果画面を表示します.
-     * @param price
-     * @param model
-     * @param form
+     *
+     * @param price 価格
+     * @param model　モデル
+     * @param form　フォーム
      * @return ホテル検索結果画面
      */
     @RequestMapping("/result")
     public String result(Integer price, Model model, HotelForm form) {
         List<Hotel> hotelList = hotelService.showBelowPrice(form.getPrice());
         model.addAttribute("hotelList", hotelList);
-        if(price == null){
-            model.addAttribute("hotelList", hotelService.showAllList());
-        }
-
         return "hotelSeach";
-
-
     }
-
-
 }
 
 

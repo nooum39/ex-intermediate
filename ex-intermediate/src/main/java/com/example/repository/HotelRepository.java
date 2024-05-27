@@ -39,10 +39,10 @@ public class HotelRepository {
     /**
      * price以下の価格をもったホテルの情報を降順に表示します.
      *
-     * @param price
+     * @param price 価格
      * @return price以下の価格をもったホテルの情報
      */
-    public List<Hotel> showBelowPrice(Integer price) {
+    public List<Hotel> findByBelowPrice(Integer price) {
         String sql = "SELECT id, area_name, hotel_name, address, nearest_station, price, parking FROM hotels WHERE price<=:price ORDER BY price DESC;";
         SqlParameterSource param = new MapSqlParameterSource().addValue("price", price);
         List<Hotel> hotelList = template.query(sql, param, HOTEL_ROW_MAPPER);
@@ -50,11 +50,11 @@ public class HotelRepository {
     }
 
     /**
-     * すべてのホテルを表示します.
-     * @param price
+     * すべてのホテルを降順で表示します.
+     *
      * @return ホテル情報
      */
-    public List<Hotel> showAllList() {
+    public List<Hotel> findByAll() {
         String sql = "SELECT id, area_name, hotel_name, address, nearest_station, price, parking FROM hotels ORDER BY price DESC;";
         List<Hotel> hotelList = template.query(sql, HOTEL_ROW_MAPPER);
         return hotelList;
