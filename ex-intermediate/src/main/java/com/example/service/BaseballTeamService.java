@@ -1,7 +1,7 @@
 package com.example.service;
 
 import com.example.domain.BaseballTeam;
-import com.example.repository.BaseballRepository;
+import com.example.repository.BaseballTeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,9 +16,9 @@ import java.util.List;
 
 @Service
 @Transactional
-public class BaseballService {
+public class BaseballTeamService {
     @Autowired
-    private BaseballRepository repository;
+    private BaseballTeamRepository repository;
 
     /**
      * 野球チームの情報をロードする.

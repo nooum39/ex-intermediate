@@ -17,7 +17,7 @@ import java.util.List;
  * @author haruka.yamaneki
  */
 @Repository
-public class BaseballRepository {
+public class BaseballTeamRepository {
     @Autowired
     private NamedParameterJdbcTemplate template;
 

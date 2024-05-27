@@ -1,8 +1,7 @@
 package com.example.controller;
 
 
-import com.example.domain.BaseballTeam;
-import com.example.service.BaseballService;
+import com.example.service.BaseballTeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/ex1")
-public class BaseballController {
+public class BaseballTeamController {
     @Autowired
-    private BaseballService baseballService;
+    private BaseballTeamService baseballService;
 
     /**
      * 野球チーム一覧を表示します.
