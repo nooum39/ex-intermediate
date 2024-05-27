@@ -8,20 +8,36 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * 野球チーム関連の処理を行うメソッドがあるサービスです.
+ *
+ * @author haruka.yamaneki
+ */
+
 @Service
 @Transactional
 public class BaseballService {
     @Autowired
     private BaseballRepository repository;
 
-    public BaseballTeam load(Integer id){
+    /**
+     * 野球チームの情報をロードする.
+     *
+     * @param id
+     * @return 野球チームの情報
+     */
+    public BaseballTeam load(Integer id) {
         return repository.load(id);
     }
 
-    public List<BaseballTeam> allFind(){
+    /**
+     * 野球チームの一覧情報を取得する.
+     *
+     * @return　野球チーム一覧情報
+     */
+    public List<BaseballTeam> allFind() {
         return repository.findAll();
     }
-
 
 
 }
