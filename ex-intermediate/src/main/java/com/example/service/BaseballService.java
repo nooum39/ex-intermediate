@@ -35,7 +35,7 @@ public class BaseballService {
      *
      * @return　野球チーム一覧情報
      */
-    public List<BaseballTeam> allFind() {
+    public List<BaseballTeam> showList() {
         return repository.findAll();
     }
 

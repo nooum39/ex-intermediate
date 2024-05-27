@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <form th:action="@{/ex1/showList}">
+      <p>球団名</p>
+      <span th:text="${baseballTeams.teamName}">name</span>
+      <p>本拠地</p>
+      <span th:text="${baseballTeams.headquarters}">headquarters</span>
+      <p>発足</p>
+      <span th:text="${baseballTeams.inauguration}">inauguration</span>
+      <p>歴史</p>
+      <pre th:text="${baseballTeams.history}">history</pre>
+      <br />
+      <button>戻る</button>
+    </form>
+  </body>
+</html>
