@@ -7,13 +7,13 @@
   <body>
     <form th:action="@{/ex1/showList}">
       <p>球団名</p>
-      <span th:text="${baseballTeams.teamName}">name</span>
+      <span th:text="${baseballTeam.teamName}">name</span>
       <p>本拠地</p>
-      <span th:text="${baseballTeams.headquarters}">headquarters</span>
+      <span th:text="${baseballTeam.headquarters}">headquarters</span>
       <p>発足</p>
-      <span th:text="${baseballTeams.inauguration}">inauguration</span>
+      <span th:text="${baseballTeam.inauguration}">inauguration</span>
       <p>歴史</p>
-      <pre th:text="${baseballTeams.history}">history</pre>
+      <pre th:text="${baseballTeam.history}">history</pre>
       <br />
       <button>戻る</button>
     </form>

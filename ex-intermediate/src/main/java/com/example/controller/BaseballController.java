@@ -9,6 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ *野球チームを表示するコントローラです.
+ */
 @Controller
 @RequestMapping("/ex1")
 public class BaseballController {
@@ -36,7 +39,7 @@ public class BaseballController {
      */
     @GetMapping("/showDetail")
     public String showDetail(Integer id, Model model) {
-        model.addAttribute("baseballTeams", baseballService.load(id));
+        model.addAttribute("baseballTeam", baseballService.load(id));
         return "detail";
 
     }

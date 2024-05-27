@@ -1,5 +1,8 @@
 package com.example.domain;
 
+/**
+ * 野球チームに関するドメインです.
+ */
 public class BaseballTeam {
     /**
      * ID

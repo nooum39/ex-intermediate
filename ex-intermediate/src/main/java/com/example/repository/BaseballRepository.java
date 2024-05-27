@@ -37,7 +37,7 @@ public class BaseballRepository {
     };
 
     /**
-     * 主キー検索を行う
+     * 主キー検索を行う.
      *
      * @param id ID
      * @return　野球チーム情報
@@ -50,7 +50,7 @@ public class BaseballRepository {
     }
 
     /**
-     * 全探索を行う
+     * 全探索を行う.
      *
      * @return 野球チーム一覧
      */
